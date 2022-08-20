@@ -1,25 +1,23 @@
-import logo from './logo.svg';
+
 import './App.css';
 
-function App() {
+/* export const Constante =() => 'Hola constante'; ESTE ES EXPORT NOMBRADO*/
+import Header from './components/Header/Header';
+
+import Footer from './components/Footer/Footer'
+
+import Main from './components/Main/Main'
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+    <Header/>    
+      <Main/>
+      <Footer/>
+    </>/* esto es un fragment */
+  )
 }
 
-export default App;
+
+export default App;/* necesitamos siempre exportar para poder importar en index.js ESTE EXPORT DEFAULT Y SOLO PUEDE HABER UNO */
+
