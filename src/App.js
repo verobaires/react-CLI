@@ -4,16 +4,22 @@ import './App.css';
 /* export const Constante =() => 'Hola constante'; ESTE ES EXPORT NOMBRADO*/
 import Header from './components/Header/Header';
 
-import Footer from './components/Footer/Footer'
 
 import Main from './components/Main/Main'
 
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+
+
+import Footer from './components/Footer/Footer'
+
 const App = () => {
+  const saludo='Bienvenidos gracias por venir'
   return (
     <>
-    <Header/>    
-      <Main/>
-      <Footer/>
+      <Header />
+      <Main />
+      <ItemListContainer welcome={saludo} /> 
+      <Footer />
     </>/* esto es un fragment */
   )
 }

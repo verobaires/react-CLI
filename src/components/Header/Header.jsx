@@ -1,4 +1,7 @@
+import CartWidget from './CartWidget/CartWidget';
 import estilos from './header.module.css'
+
+/* import CartWidget from './CartWidget/CartWidget'; */
 
 
 const Header = () => {
@@ -21,6 +24,7 @@ const Header = () => {
                         <p>LOGIN</p>
                     </div>
 
+                    <CartWidget />
                 </nav>
             </header>
         </>
