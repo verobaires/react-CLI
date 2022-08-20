@@ -13,7 +13,7 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import Footer from './components/Footer/Footer'
 
 const App = () => {
-  const saludo='Bienvenidos gracias por venir'
+  const saludo='Bienvenidos gracias por visitarnos'
   return (
     <>
       <Header />
