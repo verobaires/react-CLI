@@ -1,14 +1,14 @@
 import React from 'react'
-import {Item} from '../Item/Item'
+import Item from '../Item/Item'
 
-const ItemList = ({Item}) => {
+const ItemList = ({items}) => {
    
     
   
     return (
       <div >
         {
-        Item.map(items => <items key={items.id} img={items.img} title={items.title} stock={items.stock} price={items.price} />) 
+        Item.map(item => <Item key={item.id} img={item.img} title={item.title} stock={item.stock} price={item.price} item={item} />) 
         }
       </div>
   

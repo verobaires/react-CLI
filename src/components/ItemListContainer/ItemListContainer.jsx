@@ -12,29 +12,28 @@ const ItemListContainer = ({welcome}) =>{
     const [items, setItems] = useState([])
 
     useEffect( () => {
-        const getProducts = new Promise ( (res, rej)  =>  {
-            {setTimeout( () => {res(product);}, 2000  ); }
-        })
+        const getProducts = new Promise ( (res, rej)  =>  {    
+            
+            setTimeout( () => {res(product);}, 2000  ); 
+
+        }
+        );
   
-
-
   getProducts 
     
       .then((data) => {setItems(data);})
       .catch((error) => console.error(error))
       .finally(() => {});
-    }, [])  
+    }, []);  
 
     return(
         <ItemList item={items} />
     )
 }
 
-
-
-
 export default ItemListContainer
 
 
 
 
+    
