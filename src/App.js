@@ -9,10 +9,13 @@ import Main from './components/Main/Main'
 
 import ItemCount from './components/ItemCount/ItemCount';/* CONTADOR */
 
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import { Item } from './components/Item/Item';
+
+import {ItemListContainer} from './components/ItemListContainer/ItemListContainer';
 
 
 import Footer from './components/Footer/Footer'
+
 
 
 
