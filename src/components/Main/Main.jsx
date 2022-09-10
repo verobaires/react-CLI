@@ -1,14 +1,16 @@
 import React from 'react'
+import ItemDetail from '../Api/ItemDetail';
+
+
+
 
 const Main = () => {
     return (
-        <>
-            <main >
-                <h1>Leer jugar Amar</h1>
-                <h2>Lo mejor de un libro es que no tenemos que esperar dias para el proximo capitulo </h2>
-            </main>
-        </>
-    )
-}
+        <main >
+        
+            <ItemDetail/>
+        </main>
+    );
+};
 
-export default Main
+export default Main;
