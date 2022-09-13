@@ -1,5 +1,6 @@
-import CartWidget from './CartWidget/CartWidget';
-import estilos from './header.module.css'
+import React from 'react';
+import CartWidget from '../CartWidget/CartWidget';
+import estilos from './header.module.css';
 
 /* import CartWidget from './CartWidget/CartWidget'; */
 

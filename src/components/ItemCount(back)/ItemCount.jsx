@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import estilos from './ItemCount.module.css'
+/* import React, { useState } from 'react';
+import estilos from './ItemCount.module.css' */
 
 
 /* paso los parametros los props */
 
 /* paso initial en lugar de 0 porque en esta ya defino la cantidad minima */
 
-const ItemCount = ({stock, inicial, onAdd}) => {
+/* const ItemCount = ({stock, inicial, onAdd}) => {
 
 
      const [contador, setContador] = useState(inicial);
@@ -30,6 +30,6 @@ const ItemCount = ({stock, inicial, onAdd}) => {
     ) 
 }
 
-export default ItemCount;
+export default ItemCount; */
 
 /* aca puedo poner onAdd porque ya defini de que se trata esta funcion en el padre App */

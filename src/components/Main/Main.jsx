@@ -1,5 +1,8 @@
 import React from 'react'
-import ItemDetail from '../Api/ItemDetail';
+import Cart from '../Cart/Cart';
+import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
+import ItemListContainer from '../ItemListContainer/ItemListContainer';
+ 
 
 
 
@@ -7,8 +10,9 @@ import ItemDetail from '../Api/ItemDetail';
 const Main = () => {
     return (
         <main >
-        
+        <ItemListContainer welcome=""/>
             <ItemDetail/>
+            <Cart/>
         </main>
     );
 };

@@ -1,76 +1,31 @@
-import React from 'react'/* shortcut rafce */
-import { useState, useEffect } from 'react';
-/* import { Item } from '../Item/Item'; */
-import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
+import React, { useState } from 'react';
+import Counter from '../Counter/Counter';
+import {Link} from 'react-router-dom';
+
+const ItemDetail = ({ item }) => {
+    const [cant, setCant] = useState(0);
+
+    const onAdd = (argumento) => { setCant(argumento) };
 
 
 
-const ItemDetail = () => {
+    return (
+        <div>
 
-    /* necesito un component para renderizarlo en el dom con usestate */
-const[articulos, setArticulos] = useState([]);
+            <img src={item.img} alt={item.title} />
 
-const[istLoading, setisLoading] = useState(true)/* si es true es porque esta cargando */
+            <div>
+                <h2>{item.title}</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam libero, impedit voluptatum iure qui cumque nulla voluptas architecto doloribus. Modi ratione laborum ipsam praesentium eius saepe sapiente necessitatibus qui iure.</p>
+                <h3>{item.price}</h3>
+                {cant === 0 ? ( <Counter stock={item.stock} inicial={1} onAdd={onAdd}/>  )         : (<Link to="/cart">Ir a Carrito</Link>)}
 
-/* uso useEffect para que haga primero el return*/
-useEffect(() => {
-    fetch('https://fakestoreapi.com/products')
-    .then((res) =>res.json()  )/* recibo info y la paso a json */
-    
-    .then((res) =>{setArticulos(res); console.log(res)} )/* ahora puedo ver el contenido de ese json */
+            </div>
 
-    .catch((error) =>{console.log(error)})
-    .finally( () => {
-        setisLoading(false)
-       }
-
+        </div>
     );
-  
-        }, [])
-/* dejo los corchetes vacios para que haga la carga una sola vez */
-
-
-  return (
-    <div>
-                 {
-            istLoading ? (<h1>Cargando productos...</h1> ) : <ItemDetailContainer articulos={articulos}/>
-                /* por operador ternario le decimos que si es true muestre el h1 si es false carga todos los items */    
-        }
-    
-    </div>
-    
-  )
 };
 
 export default ItemDetail
 
 
-/* Esta es una opcion por operador ternario le decimos que si isLoading es true entonces pasamos el mensaje del h1
-En cambio si es false realiza la bajada de todos los items
-
-return (
-    <div>
-
-                 {
-            istLoading ? (<h1>Cargando productos...</h1> ) : (
-                
-                <>
-                    {
-            articulos.map((losItems) => {
-                return(
-                    <div key={losItems.id}>
-                        <img src="{losItems.image}" width="200px" alt="{losItems.title}" />
-                        <h3>{losItems.title}</h3>
-                    </div>
-                );
-            })
-                
-                }
-                </>
-            ) 
-
-        }
-    
-    </div> 
-    
-  )*/
