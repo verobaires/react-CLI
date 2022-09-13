@@ -1,7 +1,7 @@
 import React from 'react'/* shortcut rafce */
 import { useState, useEffect } from 'react';
 /* import { Item } from '../Item/Item'; */
-import ItemDetailContainer from './ItemDetailContainer';
+import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
 
 
 

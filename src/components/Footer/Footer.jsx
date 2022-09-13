@@ -1,7 +1,7 @@
 const Footer = () =>{
     return(
         <>
-        <h5>Copyright - Leer jugar amar</h5>
+        <h5 className="footer">Copyright - Leer jugar amar</h5>
         
         </>
     )
