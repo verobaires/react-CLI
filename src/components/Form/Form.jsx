@@ -1,7 +1,9 @@
 import React from 'react';
+import{addDoc, collection, doc, serverTimestamp, updateDoc} from 'firebase/firestore'
 import { useState } from 'react';
+import {db} from '../../firebaseConfig';
 
-const Form = () => {
+const Form = ({cart, total, clearCart, handleId}) => {
 
     const [nombre, setNombre] = useState('');/* hay que hacer un estado por cada input y despues poner en value que coincida con este y agregar el evento onChange para capturar el valor del input
     
@@ -9,10 +11,30 @@ const Form = () => {
     */
     const [apellido, setApellido] = useState('');
 
-    const hacerSubmit = (evento) => {
-        evento.preventDefault();
+    const hacerSubmit = (e) => {
+        e.preventDefault();
+        const order = {
+            buyer: {nombre: nombre, apellido: apellido},
+            items: cart,
+            total: total,
+            date: serverTimestamp(),
+        };
+
+        const orderCollection = collection(db, 'orders');
+
+        addDoc(orderCollection, order).then( (res) => {
+            handleId(res.id);
+            clearCart();
+            updateDoc();
+        });
     };
 
+    const updateprod = ( ) => {
+        const orderDoc = doc(db, 'orders', '39MNE0z9ffSUnhg3HgML');
+        updateDoc(orderDoc, {total: 100});
+    })
+
+  
     const hacerCambioNombre = (evento) => {
         setNombre(evento.target.value);
     }
