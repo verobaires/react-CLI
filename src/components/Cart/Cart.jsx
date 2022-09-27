@@ -1,14 +1,16 @@
 import React from 'react';
 import Form from './Form/Form'
-import {useCartContext} from '../Context/CartContext'
+import {CartContext, useCartContext} from '../Context/CartContext'
 import { Link } from 'react-router-dom';
 import ItemCart from '../ItemCart/ItemCart';
+import { useState } from 'react';
 
 const Cart = () => {
+  const [idCompra, setIdCompra] = useState('');
 
-  const {cart, totalPrice} = useCartContext();
+  const {cart, emptyCart, removeProduct, totalPrice} = useCartContext(CartContext);
 
-  if(cart.lengh === 0) {
+/*   if(cart.lengh === 0) {
     return(
       <>
       <p>No hay elementos en el carrito</p>
@@ -16,9 +18,13 @@ const Cart = () => {
       </>
     );
   }
+ */
+const total = totalPrice();
 
+const handleId = (id) => {setIdCompra(id);};
 
-
+if(idCompra){return <h1>Gracias por la compra tu id es: {idCompra}</h1>}
+if(cart.length === 0){return <h1> Hay mucho por elegir visita <Link to='/'>Home</Link></h1>}
   return (
     <div>
         
@@ -30,7 +36,7 @@ const Cart = () => {
         total: {totalPrice()}
        </p>
        
-
+<Form cart={cart} total={total} emptyCart={emptyCart} handleId={handleId}/>
     </div>
   );
 };
